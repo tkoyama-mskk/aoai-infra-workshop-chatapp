@@ -184,21 +184,20 @@ completion = client.chat.completions.create(
 print(completion.to_json())  
 ```
 
-### STEP3 - Python の開発環境を準備して、プログラムを実行
+### STEP4 - Python の開発環境を準備して、プログラムを実行
 
 - 仮想環境を起動し、openai モジュールをインストールする（ソースと同じフォルダで作業）
 
 ``` bash
 $ python3 -m venv .venv
 $ source ./.venv/bin/activate
+
 # 仮想環境が起動するので、移行はこの環境で作業
 (.venv)$ pip install openai
+# プログラムの実行
+(.vent)$ python3 ./testapp.py
 ```
 
-- 次のようにして実行すると、応答の JSON が表示されます。
-
-``` bash
-python3 ./testapp.py
-```
+- 応答の JSON が表示されるのが確認できると思います
 
 ## (EOF)
