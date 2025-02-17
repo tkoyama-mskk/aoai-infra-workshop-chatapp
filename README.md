@@ -108,8 +108,11 @@ OpenAI に接続可能な Linux 環境をご用意ください
 
 - Python の開発環境を用意
 ``` bash
+# apt を最新化します
 $ sudo apt update
 $ sudo apt upgrade
+
+# 以下の Python のモジュールをインストールします
 $ sudo apt install python3
 $ sudo apt install python3-venv
 $ sudo apt install python3-pip
@@ -120,13 +123,17 @@ $ sudo apt install python3-pip
 - プロジェクトフォルダの用意
 
 ``` bash
+# プロジェクトフォルダの作成
 $ mkdir testapp
+
+# フォルダに移動
 $ cd testapp
 ```
 
 - エディタを起動し、チャットプレイグラウンドからコピーしたコードを貼り付けます。ここでは「キー認証」版をコピー＆ペースとしています。
 
 ``` bash
+# エディタの起動。プログラム名は任意
 $ vi testapp.py
 ```
 
@@ -184,16 +191,25 @@ completion = client.chat.completions.create(
 print(completion.to_json())  
 ```
 
-### STEP4 - Python の開発環境を準備して、プログラムを実行
+### STEP4 - Python の開発環境を準備して、openai モジュールをインストールする
 
-- 仮想環境を起動し、openai モジュールをインストールする（ソースと同じフォルダで作業）
-
+- 仮想環境を準備します
 ``` bash
+# 仮想環境を作成
 $ python3 -m venv .venv
+
+# 仮想環境を起動
 $ source ./.venv/bin/activate
 
-# 仮想環境が起動するので、移行はこの環境で作業
+# 仮想環境が起動するので、ここに openai をインストール
 (.venv)$ pip install openai
+```
+
+### STEP5 - Python のプログラムを実行する
+
+``` python
+# 仮想環境を終了してしまっている場合は、再度、仮想環境を起動します
+# $ source ./.venv/bin/activate
 
 # プログラムの実行（応答の JSON が表示されるのが確認できると思います）
 (.vent)$ python3 ./testapp.py
