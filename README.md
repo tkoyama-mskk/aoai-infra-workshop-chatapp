@@ -37,7 +37,7 @@
 - 最後に「確認および作成]-[作成] をクリックします
 
 ### STEP2 - 仮想ネットワーク統合を有効にする
-<img src="figs/02-vnet-integ.svg" alt="alt" width="600px" />
+<img src="figs/02-vnet-integ.svg" alt="alt" width="800px" />
 
 - デプロイした Web アプリ（App Service）のリソースに移動して、[ネットワーク] から「仮想ネットワーク統合」を構成します。
 
@@ -45,11 +45,11 @@
 今回は「外部の Git」からの手動デプロイを利用します。最初に、SCM 基本認証をオンにしておく必要があります。
 
 #### SCM 基本認証を有効にします
-<img src="figs/03-config-scm-auth.svg" alt="alt" width="600px" />
+<img src="figs/03-config-scm-auth.svg" alt="alt" width="800px" />
 - Web アプリ（App Service）の [構成] から、[SCM 基本認証の発行資格情報] を [オン] にします。
 
 #### 外部 Git を指定します
-<img src="figs/04-external-git.svg" alt="alt" width="600px" />
+<img src="figs/04-external-git.svg" alt="alt" width="800px" />
 
 - Web アプリ（App Service）の [デプロイセンターから]、[ソース] に「外部 Git」を指定します
   - リポジトリは次を指定してください → https://github.com/tkoyama-mskk/aoai-infra-workshop-chatapp.git
@@ -60,14 +60,16 @@
 
 ### STEP4 - 環境変数を設定します
 
-#### キーとエンドポイント、及びモデルの名前を控えます
-<img src="figs/05-model-name.svg" alt="alt" width="600px" />
+#### モデルの名前を控えます
+<img src="figs/05-model-name.svg" alt="alt" width="400px" />
 - モデルの名前は、デプロイしたモデルの名前です。「Azure AI Foundry」のチャットプライグラウンドから確認できます。
 
+#### キーとエンドポイントの値を控えます
 <img src="figs/06-key-and-endpoint.svg" alt="alt" width="600px" />
 - キーとエンドポイントは、Azure OpenAI の [キーとエンドポイント] から取得可能です
 
 #### 環境変数を設定します
+先ほど控えた値を環境変数に設定します
 <img src="figs/07-environment-variables.svg" alt="alt" width="600px" />
 - Web アプリ（App Service）の [環境変数] から以下の３つの環境変数を追加してください
   - DEPLOYMENT_NAME - 「gpt-35-turbo-16k」などデプロイしたモデル名を指定します
@@ -76,10 +78,11 @@
 - 最後に[適用]ボタン、[確認] をクリックします
 
 ### STEP5 - 動作確認
-#### 起動
+#### 起動します
 <img src="figs/08-launch-webapp.svg" alt="alt" width="600px" />
 - Web アプリ（App Service）の [概要] から [既定のドメイン]にある URL をクリックするとアプリが起動します
 
+#### 動作確認
 <img src="figs/09-sample-app.svg" alt="alt" width="600px" />
 - テキストボックスに「国産メインフレームはどのようにして開発されましたか？」と入力すると結果が返ります。（すこし時間がかかります）
 
