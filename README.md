@@ -21,7 +21,7 @@
 ### STEP1 - Web App リソースのデプロイ
 
 - Azure Portal から [Web アプリ] を作成してください
-<img src="figs/add-webapp.png" alt="alt" width="800px" />
+<img src="figs/add-webapp.png" style="border: 2px solid" alt="alt" width="800px" />
 
 
 - 以下のパラメータで作成します。
@@ -37,6 +37,6 @@
 - その他のタブは既定のままで大丈夫です。
 - 最後に「確認および作成]-[作成] をクリックします
 
-<img src="figs/create-webapp.png" alt="alt" width="600px" />
+<img src="figs/create-webapp.png" style="border: 2px solid" alt="alt" width="600px" />
 
 
