@@ -102,38 +102,37 @@ OpenAI に接続可能な Linux 環境をご用意ください
 - Linux の VM をデプロイして演習で作成した VNET に接続する
 - ローカルのクライアントにを Linux にして（WSLでも可能）、演習の VNET に VPN GW 接続するなど
 
-### STEP2 - Python 開発環境の用意
+### STEP2 - Python のインストール
+
+用意した Linux 環境にログインして、Python をインストールします。
 
 - Python の開発環境を用意
 ``` bash
-sudo apt update
-sudo apt upgrade
-sudo apt install python3
-sudo apt install python3-venv
-sudo apt install python3-pip
-```
-
-- プロジェクトフォルダの用意
-``` bash
-mkdir testapp
-cd testapp
-```
-
-- 仮想環境を起動し、openai モジュールをインストール
-``` bash
-python3 -m venv .venv
-source ./venv/bin/activate
-pip install openai
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install python3
+$ sudo apt install python3-venv
+$ sudo apt install python3-pip
 ```
 
 ### STEP3 - Python プログラムの編集
+
+- プロジェクトフォルダの用意
+
+``` bash
+$ mkdir testapp
+$ cd testapp
+```
+
 - エディタを起動し、チャットプレイグラウンドからコピーしたコードを貼り付けます。ここでは「キー認証」版をコピー＆ペースとしています。
+
 ``` bash
 vi testapp.py
 ```
 
 - プログラムを編集して、モデル名、エンドポイントURL、OpenAI のキーを設定します
 - またお好きなプロンプトを以下のソースの様に追加してください
+
 ``` python
 import os  
 import base64
@@ -185,7 +184,17 @@ completion = client.chat.completions.create(
 print(completion.to_json())  
 ```
 
-### STEP3 - Python プログラムの実行
+### STEP3 - Python の開発環境を準備して、プログラムを実行
+
+- 仮想環境を起動し、openai モジュールをインストールする（ソースと同じフォルダで作業）
+
+``` bash
+$ python3 -m venv .venv
+$ source ./.venv/bin/activate
+# 仮想環境が起動するので、移行はこの環境で作業
+(.venv)$ pip install openai
+```
+
 - 次のようにして実行すると、応答の JSON が表示されます。
 
 ``` bash
