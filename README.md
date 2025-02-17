@@ -30,7 +30,7 @@
   - 公開 - [コード] を選択します
   - ランタイムスタック - [Python 3.12] を選択します
   - オペレーティングシステム - [Linux] を選択します
-  - リージョン - 任意ですが、原則として AOAI をデプロイしたリージョンと同じにします
+  - リージョン - AOAI をデプロイしたリージョンと同じにします
   - Linux プラン - 新規作成してください（名前等は任意）
   - 価格プラン - 任意です。
 - その他のタブは既定のままで大丈夫です。
@@ -75,9 +75,9 @@
 <img src="figs/07-environment-variables.svg" alt="alt" width="600px" />
 
 - Web アプリ（App Service）の [環境変数] から以下の３つの環境変数を追加してください
-  - DEPLOYMENT_NAME - 「gpt-35-turbo-16k」などデプロイしたモデル名を指定します
-  - ENDPOINT_URL - OpenAI のエンドポイント URL を指定します。
-  - AZURE_OPENAI_API_KEY - OpenAI のキーを指定します。
+  - ```DEPLOYMENT_NAME``` - 「gpt-35-turbo-16k」などデプロイしたモデル名を指定します
+  - ```ENDPOINT_URL``` - OpenAI のエンドポイント URL を指定します。
+  - ```AZURE_OPENAI_API_KEY``` - OpenAI のキーを指定します。
 - 最後に[適用]ボタン、[確認] をクリックします
 
 ### STEP5 - 動作確認
