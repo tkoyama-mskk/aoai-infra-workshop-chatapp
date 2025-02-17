@@ -127,7 +127,7 @@ $ cd testapp
 - エディタを起動し、チャットプレイグラウンドからコピーしたコードを貼り付けます。ここでは「キー認証」版をコピー＆ペースとしています。
 
 ``` bash
-vi testapp.py
+$ vi testapp.py
 ```
 
 - プログラムを編集して、モデル名、エンドポイントURL、OpenAI のキーを設定します
@@ -194,10 +194,9 @@ $ source ./.venv/bin/activate
 
 # 仮想環境が起動するので、移行はこの環境で作業
 (.venv)$ pip install openai
-# プログラムの実行
+
+# プログラムの実行（応答の JSON が表示されるのが確認できると思います）
 (.vent)$ python3 ./testapp.py
 ```
-
-- 応答の JSON が表示されるのが確認できると思います
 
 ## (EOF)
