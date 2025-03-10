@@ -24,10 +24,12 @@ def answer():
    if not message:
        return redirect(url_for('index'))
 
-   # キーベースの認証を使用して Azure OpenAI Service クライアントを初期化する    
+   #キーベースの認証を使用して Azure OpenAI Service クライアントを初期化する
+   #本番アプリでは認証は ManagedID にするのが推奨です。
    client = AzureOpenAI(azure_endpoint=endpoint,api_key=subscription_key,api_version="2024-05-01-preview",)
 
-   #チャット プロンプトを準備する 
+   #チャット プロンプトを準備する
+   #本番アプリの場合はこちらのプロンプトの履歴管理等を実施する必要があります。このサンプルでは省略しています。
    chat_prompt = [
       {
          "role": "system",
@@ -40,7 +42,8 @@ def answer():
    ] 
    inputdata = chat_prompt  
 
-   # 入力候補を生成する  (同期呼出しの為、画面がフリーズする可能性があります。実アプリでは非同期呼出しをご検討ください）
+   #入力候補を生成する。以下は同期呼出しで実装していますが、
+   #本番アプリでは、ユーザビリティを考慮して非同期で実装するのが一般的です。
    completion = client.chat.completions.create(  
       model=deployment,
       messages=inputdata,

@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+# TAGS
+GPATH
+GRTAGS
+GTAGS
+
 # Distribution / packaging
 .Python
 build/
